@@ -30,3 +30,10 @@ function getHumanChoice(choice) {
     }
 }
 console.log(`User: ${getHumanChoice(choice)}`);
+
+
+// STEP 4: Declare the player score variables
+
+// Create two variables to store the score of each player, and initialize the value of each variable to 0
+let humanScore = 0; 
+let computerScore = 0;
