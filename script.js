@@ -1,33 +1,32 @@
-// randomly return one of three strings each time the function is called
+// STEP 2: Get the computer choice
+
+// Randomly return one of three strings each time the function is called
 function getComputerChoice() {
+    return Math.floor(Math.random() * 3);
+}
+console.log(`Computer: ${getComputerChoice()}`); 
 
-    // initaialize choice to a random number between 0 and 2 (inclusive)
-    let choice = Math.floor(Math.random() * 3);
 
-    // match the return value of choice to one of three possible conditions
+// STEP 3: Get the human choice
+
+// Initialize a variable 'choice' and set it to the user input
+// Make the user input case insensitive
+const choice = prompt('Rock, Paper, Scissors... (use key groups 1/2/3 or 8/9/0 to play)').toLowerCase();
+
+// Take a single argument 'choice' and return one of three strings if a condition is satisfied
+function getHumanChoice(choice) {
     switch (choice) {
-        case 0:
-            return 'rock'; 
+        case 'rock': 
+            return 0;
             break; 
-        case 1: 
-            return 'paper'; 
+        case 'paper': 
+            return 1;
             break; 
-        case 2: 
-            return 'scissors'; 
-            break; 
+        case 'scissors':
+            return 2;
+            break;
+        default: 
+            return `Please enter "rock", "paper", or "scissors"`
     }
 }
-
-// initialize a variable 'choice' and set it to the user input
-const choice = prompt('Rock, Paper, Scissors... (use key groups 1/2/3 or 8/9/0 to play)');
-
-// take a single parameter 'choice' and return one of three strings if a condition is satisfied
-function getHumanChoice(choice) {
-    if (choice == '1' || choice == '8') {
-        return 'rock'; 
-    } else if (choice == '2' || choice == '9') {
-        return 'paper'
-    } else if (choice == '3' || choice == '0') {
-        return 'scissors'
-    } else return 'Please use key groups 1/2/3 or 8/9/0 to play'; 
-}
+console.log(`User: ${getHumanChoice(choice)}`);
