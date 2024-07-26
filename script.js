@@ -1,35 +1,27 @@
 // STEP 2: Get the computer choice
 
 function getComputerChoice() {
-    const choice = Math.floor(Math.random() * 3);
-    switch (choice) {
-        case 0: 
-            return 'rock'; 
-            break; 
-        case 1: 
-            return 'paper'; 
-            break; 
-        case 2: 
-            return 'scissors'; 
-            break;
-    }
+    return Math.floor(Math.random() * 3);
 }
 console.log(`Computer: ${getComputerChoice()}`); 
 
 
 // STEP 3: Get the human choice
 
-const choice = prompt('Rock, Paper, Scissors... [enter your choice below] ...SHOOT!'); 
+const choice = prompt('Rock, Paper, Scissors... [enter your choice below] ...SHOOT!').toLowerCase(); 
 
-function getHumanChoice(choice) {
-    choice = choice.toLowerCase(); 
-    if (
-        choice === 'rock' || 
-        choice === 'paper' || 
-        choice === 'scissors'
-    ) {
-        return choice; 
-    } else return 'Please check your spelling and try again!'
+function getHumanChoice(choice) { 
+    switch (choice) {
+        case 'rock': 
+            return 0; 
+            break; 
+        case 'paper': 
+            return 1; 
+            break; 
+        case 'scissors':
+            return 2; 
+            break; 
+    }  
 }
 console.log(`Human: ${getHumanChoice(choice)}`); 
 
@@ -39,9 +31,10 @@ console.log(`Human: ${getHumanChoice(choice)}`);
 let humanScore = 0; 
 let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
-    
-    
-    return `The human choice is ${humanChoice} and the computer choice is ${computerChoice}`; 
+
+// STEP 5: Write the logic to play a single round
+
+function playRound(computerChoice, humanChoice) {
+     
 }
 console.log(playRound(getHumanChoice(choice), getComputerChoice())); 
