@@ -42,14 +42,22 @@ let computerScore = 0; // Initialize both variables with the value 0
 
 // Create a function named “playRound” with two parameters: “humanChoice” and “computerChoice”
 function playRound(humanChoice, computerChoice) {
-     
-// If both players’ choices are equal, increment neither score and log: “It’s a tie!”
-
-// If humanChoice is “paper” and computerChoice” is “rock”, increment humanScore by 1 and log: “You win! Paper beats Rock!”
-
-// If humanChoice is “scissors” and computerChoice is “paper”, increment humanScore by 1 and log: “You win! Scissors beats Paper!” 
-
-// If humanChoice is “rock” and computerChoice is “scissors”, increment humanScore by 1 and log: “You win! Rock beats Scissors!” 
-
-// Else, increment computerScore by 1 and log: “You lose! (computerChoice) beats (humanChoice)”
+    // If both players’ choices are equal, increment neither score and log: “It’s a tie!”
+    if (humanChoice === computerChoice) {
+        console.log(`It's a tie!`);
+    // If humanChoice is “paper” and computerChoice” is “rock”, increment humanScore by 1 and log: “You win! Paper beats Rock!” 
+    } else if (
+        // If humanChoice and computerChoice pass any of the conditions below, run the following code
+        humanChoice === 'paper' && computerChoice === 'rock' ||
+        humanChoice === 'scissors' && computerChoice === 'paper' ||
+        humanChoice === 'rock' && computerChoice === 'scissors'
+    ) {
+        // Increment humanScore by 1 and log: “You win! [value of humanChoice] beats [value of computerChoice]!”
+        humanScore += 1; 
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!`); 
+    } else {
+        // Else, increment computerScore by 1 and log: “You lose! [value of computerChoice] beats (value of [humanChoice]”
+        computerScore += 1; 
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`); 
+    }
 }
