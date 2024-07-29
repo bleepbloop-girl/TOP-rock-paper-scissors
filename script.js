@@ -52,16 +52,22 @@ function playRound(humanChoice, computerChoice) {
         humanChoice === 'scissors' && computerChoice === 'paper'
     ) {
         // Log a winner announcement, increment "humanScore" by 1
-        console.log(`You win! ${humanChoice} beats ${computerChoice}!`); 
+        console.log(`you win! ${humanChoice} beats ${computerChoice}!`); 
         humanScore += 1; 
     } else {
         // Log an alternative winner announcment, increment "computerScore" by 1
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}!`); 
+        console.log(`you lose! ${computerChoice} beats ${humanChoice}!`); 
         computerScore += 1;
     }
-}
-
-playRound(getHumanChoice(), getComputerChoice());  
+} playRound(getHumanChoice(), getComputerChoice());  
 
 console.log(`Human: ${humanScore}`); 
 console.log(`Computer: ${computerScore}`);
+
+
+// Create a function named “playGame” 
+function playGame() {
+    // Move playRound and score variables so that they’re declared inside of playGame
+
+    // Play 5 rounds by calling playRound 5 times
+}
