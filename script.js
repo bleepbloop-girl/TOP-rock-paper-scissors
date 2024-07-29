@@ -71,6 +71,7 @@ function playGame() {
         playRound(getHumanChoice(), getComputerChoice());
         console.log(`HUMAN: ${humanScore} \nCOMPUTER: ${computerScore} \n `); 
     }
+    
 }
 
 playGame();
