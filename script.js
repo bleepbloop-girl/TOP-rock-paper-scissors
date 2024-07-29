@@ -49,7 +49,7 @@ function playGame() {
         if (humanChoice === computerChoice) {
             console.log(`it's a tie!`);
 
-        // If the choices pass any of the following conditions, run the following block of code
+        // If the choices pass any of the following conditions, run the subsequent block of code
         } else if (
             humanChoice === 'rock' && computerChoice === 'scissors' ||
             humanChoice === 'paper' && computerChoice === 'rock' ||
@@ -71,7 +71,7 @@ function playGame() {
         playRound(getHumanChoice(), getComputerChoice());
         console.log(`HUMAN: ${humanScore} \nCOMPUTER: ${computerScore} \n `); 
     }
-    
+
 }
 
 playGame();
