@@ -33,3 +33,8 @@ function getHumanChoice() {
     } else return 'oops'
 
 } console.log(getHumanChoice());
+
+
+// Create two new variables “humanScore” and “computerScore” in the global scope
+let humanScore = 0;
+let computerScore = 0; // Initialize both variables with the value 0
