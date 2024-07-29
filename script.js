@@ -41,26 +41,21 @@ let computerScore = 0; // Initialize both variables with the value 0
 
 
 // Create a function named “playRound” with two parameters: “humanChoice” and “computerChoice”
-function playRound(humanChoice, computerChoice) {
-    console.log(`The human choice is ${humanChoice} and the computer choice is ${computerChoice}`);
-
-    // If both players’ choices are equal, increment neither score and log: “It’s a tie!”
+function playRound(humanChoice, computerChoice) {    
     if (humanChoice === computerChoice) {
+        // If both players’ choices are equal, increment neither score and log: “It’s a tie!”
         console.log(`It's a tie!`);
-        // If humanChoice is “rock” and computerChoice is “scissors”, increment humanScore by 1 and log: “You win! Rock beats Scissors!”  
-    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-        console.log('You win! Rock beats Scissors!'); 
-        humanScore += 1; 
-        // If humanChoice is “paper” and computerChoice” is “rock”, increment humanScore by 1 and log: “You win! Paper beats Rock!”
-    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-        console.log('You win! Paper beats Rock!');
-        humanScore += 1;
-        // If humanChoice is “scissors” and computerChoice is “paper”, increment humanScore by 1 and log: “You win! Scissors beats Paper!”  
-    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-        console.log('You win! Scissors beats Paper!'); 
+    } else if (
+        // If the choices pass any of the following conditions, run the following block of code
+        humanChoice === 'rock' && computerChoice === 'scissors' ||
+        humanChoice === 'paper' && computerChoice === 'rock' ||
+        humanChoice === 'scissors' && computerChoice === 'paper'
+    ) {
+        // Log a winner announcement, increment "humanScore" by 1
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!`); 
         humanScore += 1; 
     } else {
-        // Else, increment computerScore by 1 and log: “You lose! [value of computerChoice] beats [value of humanChoice]!”
+        // Log an alternative winner announcment, increment "computerScore" by 1
         console.log(`You lose! ${computerChoice} beats ${humanChoice}!`); 
         computerScore += 1;
     }
